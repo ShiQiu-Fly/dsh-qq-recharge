@@ -1,0 +1,57 @@
+{
+  "name": "dsh-qq-recharge",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "给 QQ 里的大肥鱼一张即时充值二维码：余额不足或群友想投喂时，用 DSH 已登录的 DeepSeek 账号创建支付订单并发到 QQ，扫码付款直接进她的余额。",
+  "keywords": [
+    "deepseek-harness",
+    "dsh-plugin",
+    "qq",
+    "qq-bridge",
+    "recharge",
+    "qrcode"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/<your-name>/dsh-qq-recharge.git"
+  },
+  "homepage": "https://github.com/<your-name>/dsh-qq-recharge#readme",
+  "bugs": {
+    "url": "https://github.com/<your-name>/dsh-qq-recharge/issues"
+  },
+  "main": "index.js",
+  "exports": {
+    ".": "./index.js",
+    "./locale/*.json": "./locale/*.json",
+    "./icon": "./icon.svg",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "index.js",
+    "lib",
+    "tools",
+    "cordis.patch.yml",
+    "locale/*.json",
+    "icon.svg",
+    "README.md",
+    "SHARE.md",
+    "LICENSE"
+  ],
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    }
+  },
+  "dependencies": {
+    "qrcode": "^1.5.4"
+  },
+  "peerDependencies": {
+    "@deepseek-ai/dsh-tools": "*",
+    "@deepseek-ai/schemastery": "*"
+  },
+  "peerDependenciesMeta": {
+    "@deepseek-ai/dsh-tools": { "optional": true },
+    "@deepseek-ai/schemastery": { "optional": true }
+  },
+  "license": "MIT"
+}

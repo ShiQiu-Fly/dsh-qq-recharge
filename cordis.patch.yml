@@ -1,0 +1,25 @@
+# 投喂二维码：给 QQ 里的大肥鱼一张「扫码即充进她账号」的支付码。
+#
+# 说明：
+#   · 凭据不在这里配 —— 直接复用 DSH 已登录的 DeepSeek 平台账号（~/.dsh/.credentials.yaml）。
+#   · bridgeDir 指向 qq-bridge 安装目录：插件只读它的 config.json（网关地址/白名单/管理员）
+#     和 state/sessions.json（QQ 会话 ↔ DSH 会话映射），以此决定「发到哪个群、允不允许发」。
+#   · 金额、渠道、冷却、话术都可以在下面的 config 里改；改完保存即可生效。
+- insert:
+    - id: qq-recharge
+      name: dsh-qq-recharge
+      config:
+        enabled: true
+        bridgeDir: 'D:\qq-bridge'
+        channel: wechat
+        defaultAmount: 10
+        minAmount: 1
+        maxAmount: 100
+        cooldownMinutes: 3
+        globalCooldownMinutes: 1
+        dailyLimit: 30
+        autoOnQuota: true
+        lowBalanceAutoSend: false
+        lowBalanceThreshold: 5
+        lowBalanceCooldownHours: 12
+        pollSeconds: 5
